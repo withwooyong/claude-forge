@@ -64,7 +64,7 @@ claude
 | **스킬** | 21 | `build-system` `security-pipeline` `eval-harness` `team-orchestrator` `session-wrap` ... |
 | **훅** | 23 | 7단계 보안 방어, 크로스 모델 자동 리뷰, MCP 속도 제한, 시크릿 필터링 |
 | **규칙** | 10 | `coding-style` `security` `git-workflow` `golden-principles` `agent-orchestration` ... |
-| **MCP 서버** | 9 | `context7` `memory` `exa` `gmail` `github` `fetch` `jina-reader` `desktop-commander` `coingecko` |
+| **MCP 서버** | 6 | `context7` `memory` `exa` `github` `fetch` `jina-reader` |
 
 ---
 
@@ -228,12 +228,9 @@ graph LR
 | **context7** | 실시간 라이브러리 문서 조회 |
 | **memory** | 영속적 지식 그래프 |
 | **exa** | AI 기반 웹 검색 |
-| **gmail** | 이메일 관리 |
 | **github** | 리포/PR/이슈 관리 |
 | **fetch** | 웹 콘텐츠 가져오기 |
 | **jina-reader** | URL→마크다운 변환 |
-| **desktop-commander** | 데스크톱 파일/터미널 작업 |
-| **coingecko** | 암호화폐 시세 데이터 |
 
 ---
 

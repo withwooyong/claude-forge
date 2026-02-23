@@ -64,7 +64,7 @@ That's it. All agents, commands, hooks, and rules are instantly available.
 | **Skills** | 21 | `build-system` `security-pipeline` `eval-harness` `team-orchestrator` `session-wrap` ... |
 | **Hooks** | 23 | 7-layer security defense, cross-model auto-review, MCP rate limiting, secret filtering |
 | **Rules** | 10 | `coding-style` `security` `git-workflow` `golden-principles` `agent-orchestration` ... |
-| **MCP Servers** | 9 | `context7` `memory` `exa` `gmail` `github` `fetch` `jina-reader` `desktop-commander` `coingecko` |
+| **MCP Servers** | 6 | `context7` `memory` `exa` `github` `fetch` `jina-reader` |
 
 ---
 
@@ -228,12 +228,9 @@ Pre-configured in `mcp-servers.json` -- install via `./install.sh` or `claude mc
 | **context7** | Real-time library documentation |
 | **memory** | Persistent knowledge graph |
 | **exa** | AI-powered web search |
-| **gmail** | Email management |
 | **github** | Repository / PR / issue management |
 | **fetch** | Web content fetching |
 | **jina-reader** | URL-to-markdown conversion |
-| **desktop-commander** | Desktop file & terminal operations |
-| **coingecko** | Cryptocurrency market data |
 
 ---
 

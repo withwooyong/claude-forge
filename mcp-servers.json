@@ -20,13 +20,6 @@
       "url": "https://mcp.exa.ai/mcp",
       "description": "Exa AI-powered web search and company research"
     },
-    "gmail": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "@gongrzhe/server-gmail-autoauth-mcp"],
-      "env": {},
-      "description": "Gmail read, send, search, and label management"
-    },
     "github": {
       "type": "stdio",
       "command": "npx",
@@ -47,24 +40,6 @@
       "command": "npx",
       "args": ["-y", "jina-mcp-tools"],
       "description": "URL-to-markdown via Jina AI (token-efficient)"
-    },
-    "desktop-commander": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "@wonderwhy-er/desktop-commander"],
-      "description": "Desktop file/terminal operations"
-    },
-    "coingecko": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "@coingecko/coingecko-mcp"],
-      "description": "CoinGecko cryptocurrency market data"
-    },
-    "korea-stock": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "korea-stock-mcp"],
-      "description": "Korea stock market data"
     }
   }
 }
