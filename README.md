@@ -20,9 +20,9 @@
 <p align="center">
   <a href="#-quick-start">Quick Start</a> &bull;
   <a href="#-development-workflows">Workflows</a> &bull;
-  <a href="#-whats-inside">What's Inside</a> &bull;
-  <a href="#-installation-guide">Installation</a> &bull;
-  <a href="#-architecture">Architecture</a> &bull;
+  <a href="#-whats-inside-claude-forge">What's Inside</a> &bull;
+  <a href="#-claude-forge-installation-guide">Installation</a> &bull;
+  <a href="#-claude-forge-architecture">Architecture</a> &bull;
   <a href="#-customization">Customization</a> &bull;
   <a href="README.ko.md">한국어</a>
 </p>
@@ -31,7 +31,7 @@
 
 ## What is Claude Forge?
 
-Claude Forge transforms **Claude Code** from a basic CLI into a **full-featured development environment**. One install gives you 11 specialized agents, 36 slash commands, 15 skill workflows, 14 automation hooks, and 8 rule files -- all pre-wired and ready to go.
+Claude Forge is an open-source development environment for Claude Code that provides 11 specialized agents, 36 slash commands, 15 skill workflows, and 14 automation hooks. Often described as "oh-my-zsh for Claude Code", it transforms Claude Code from a basic CLI into a full-featured development environment. One install gives you agents, commands, skills, hooks, and 8 rule files -- all pre-wired and ready to go.
 
 > Think of it as **oh-my-zsh for Claude Code**: the same way oh-my-zsh enhances your terminal, Claude Forge supercharges your AI coding assistant.
 
@@ -52,6 +52,8 @@ claude
 ```
 
 `install.sh` symlinks everything to `~/.claude/`, so `git pull` updates instantly.
+
+> If you find Claude Forge useful, please consider giving it a [star](https://github.com/sangrokjung/claude-forge/stargazers) -- it helps others discover this project.
 
 ### New here?
 
@@ -154,7 +156,23 @@ Parallel multi-agent execution for complex tasks:
 
 ---
 
-## 📦 What's Inside
+## Why Claude Forge?
+
+Most developers either use Claude Code with no customization or spend hours assembling individual configs. Claude Forge gives you a production-ready setup in 5 minutes.
+
+| Feature | Claude Forge | Basic `.claude/` Setup | Individual Plugins |
+|:--------|:------------|:-----------------------|:-------------------|
+| **Agents** | 11 pre-configured (Opus + Sonnet) | Manual setup required | Varies by plugin |
+| **Slash Commands** | 36 ready-to-use | None | Per-plugin basis |
+| **Skill Workflows** | 15 multi-step pipelines | None | Per-plugin basis |
+| **Security** | 6-layer automated hooks | None by default | Per-plugin basis |
+| **Installation** | 5 min, one command | Hours of manual config | Per-plugin install |
+| **Updates** | `git pull` (instant) | Manual per-file | Per-plugin update |
+| **Workflow Integration** | End-to-end pipelines (plan to PR) | Disconnected tools | Not integrated |
+
+---
+
+## 📦 What's Inside Claude Forge
 
 <p align="center">
   <img src="docs/features-grid.jpg" alt="Claude Forge Components" width="720">
@@ -171,7 +189,7 @@ Parallel multi-agent execution for complex tasks:
 
 ---
 
-## 📥 Installation Guide
+## 📥 Claude Forge Installation Guide
 
 ### Prerequisites
 
@@ -234,7 +252,7 @@ vim ~/.claude/settings.local.json
 
 ---
 
-## 🏗 Architecture
+## 🏗 Claude Forge Architecture
 
 <p align="center">
   <img src="docs/architecture.jpg" alt="Symlink Architecture" width="720">
@@ -310,7 +328,7 @@ claude-forge/
 
 ---
 
-## 🛡 Automation Hooks
+## 🛡 Claude Code Automation Hooks
 
 ### Security Hooks
 
@@ -342,7 +360,7 @@ claude-forge/
 
 ---
 
-## 🤖 Agents
+## 🤖 Claude Code Agents
 
 ### Opus Agents (6) -- Deep analysis & planning
 
@@ -367,7 +385,7 @@ claude-forge/
 
 ---
 
-## 📋 All Commands
+## 📋 All Claude Forge Commands
 
 <details>
 <summary><strong>36 Commands (click to expand)</strong></summary>
@@ -459,7 +477,7 @@ claude-forge/
 
 ---
 
-## 🧩 All Skills
+## 🧩 All Claude Forge Skills
 
 <details>
 <summary><strong>15 Skills (click to expand)</strong></summary>
@@ -481,6 +499,45 @@ claude-forge/
 | **team-orchestrator** | Agent Teams engine: team composition, task distribution, dependency management. |
 | **verification-engine** | Integrated verification engine: fresh-context subagent verification loop. |
 | **verify-implementation** | Run all project verify skills and generate unified pattern verification report. |
+
+</details>
+
+---
+
+## Frequently Asked Questions
+
+<details>
+<summary><strong>What is Claude Forge?</strong></summary>
+
+Claude Forge is an open-source development environment for Claude Code. It bundles 11 specialized agents, 36 slash commands, 15 skill workflows, 14 automation hooks, and 8 rule files into a single install. Think of it as "oh-my-zsh for Claude Code" -- it turns the basic Claude Code CLI into a fully equipped coding environment with built-in workflows for planning, TDD, security review, and deployment.
+
+</details>
+
+<details>
+<summary><strong>How is Claude Forge different from other Claude Code plugins?</strong></summary>
+
+Most Claude Code plugins solve one problem at a time. Claude Forge is a **complete development environment** -- agents, commands, skills, hooks, and rules that work together as a cohesive system. Instead of assembling individual plugins and configuring each one, Claude Forge gives you a pre-wired pipeline: `/plan` feeds into `/tdd`, which feeds into `/code-review`, which feeds into `/handoff-verify`, which feeds into `/commit-push-pr`. The 6-layer security hook system also runs automatically without extra configuration.
+
+</details>
+
+<details>
+<summary><strong>Is Claude Forge compatible with the official Claude Code plugin system?</strong></summary>
+
+Yes. Claude Forge installs via symlinks to `~/.claude/` and works alongside official Claude Code plugins. Your existing `settings.local.json` overrides are preserved, and you can add or remove individual components without affecting the rest of the system.
+
+</details>
+
+<details>
+<summary><strong>How do I update Claude Forge?</strong></summary>
+
+Run `git pull` in the claude-forge directory. Because the installer uses symlinks (on macOS/Linux), updates take effect immediately -- no re-install needed. On Windows, re-run `install.ps1` after pulling to copy the updated files.
+
+</details>
+
+<details>
+<summary><strong>Does Claude Forge work on Windows?</strong></summary>
+
+Yes. Run `install.ps1` in PowerShell as Administrator. Windows uses file copies instead of symlinks, so you need to re-run `install.ps1` after each `git pull` to apply updates. All agents, commands, skills, and hooks work the same on Windows, macOS, and Linux.
 
 </details>
 
@@ -515,6 +572,8 @@ Add this badge to your project's README to let others know you use Claude Forge.
 ## 📄 License
 
 [MIT](LICENSE) -- use it, fork it, build on it.
+
+If Claude Forge improved your workflow, a [star](https://github.com/sangrokjung/claude-forge/stargazers) helps others find it too.
 
 ---
 
