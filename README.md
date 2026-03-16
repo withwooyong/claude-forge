@@ -41,18 +41,17 @@ Claude Forge is an open-source development environment for Claude Code that prov
 
 ### Install as Plugin (Recommended)
 
-The easiest way to install Claude Forge is through the Claude Code plugin system:
+Claude Forge is available on the **Anthropic Official Plugin Marketplace** and can be installed directly from Claude Code:
 
 ```bash
-# Add Claude Forge as a marketplace
+# Option A: Install from Official Marketplace (after approval)
+/plugin install claude-forge@claude-plugins-official
+
+# Option B: Install from Claude Forge Marketplace
 /plugin marketplace add sangrokjung/claude-forge
-
-# Install the plugin
 /plugin install claude-forge@claude-forge
-```
 
-Or install directly from GitHub:
-```bash
+# Option C: Install directly from GitHub
 claude plugin install github:sangrokjung/claude-forge
 ```
 
@@ -60,6 +59,8 @@ To update:
 ```bash
 /plugin marketplace update claude-forge
 ```
+
+> **Note**: Claude Forge has been submitted to the [Anthropic Official Plugin Directory](https://github.com/anthropics/claude-plugins-official) and is pending review. In the meantime, use Option B or C above.
 
 ### Install via Git Clone
 
